@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-cactus-dark: #123f2b;
+  --color-cactus-green: #4caf50;
+  --color-cactus-light: #a5d6a7;
+  --color-cactus-orange: #d48b41;
+  --color-cactus-bg: #faf9f6;
+}
+
+body {
+  background-color: var(--color-cactus-bg);
+  color: var(--color-cactus-dark);
+}
