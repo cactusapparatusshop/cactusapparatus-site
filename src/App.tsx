@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Search, Menu, X, Leaf } from 'lucide-react';
 import { CactusLogo } from './components/CactusLogo';
+import { SearchModal } from './components/SearchModal';
+import { SubscribeModal } from './components/SubscribeModal';
 import Home from './pages/Home';
 import Gear from './pages/Gear';
 import Reviews from './pages/Reviews';
 import Journal from './pages/Journal';
 import About from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function Layout({ children }: { children: React.ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
   const location = useLocation();
 
   const closeMenu = () => setIsMobileMenuOpen(false);
@@ -43,10 +49,16 @@ function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Icons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="p-2 text-cactus-dark hover:text-cactus-green transition-colors">
+              <button 
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 text-cactus-dark hover:text-cactus-green transition-colors"
+              >
                 <Search size={20} />
               </button>
-              <button className="bg-cactus-dark hover:bg-cactus-green text-white px-5 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2">
+              <button 
+                onClick={() => setIsSubscribeOpen(true)}
+                className="bg-cactus-dark hover:bg-cactus-green text-white px-5 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2"
+              >
                 Subscribe
               </button>
             </div>
@@ -95,6 +107,12 @@ function Layout({ children }: { children: React.ReactNode }) {
               <p className="text-sm text-stone-500 max-w-md mb-6 leading-relaxed">
                 Your trusted source for reviews on unique gadgets, mechanical wonders, and beautifully designed apparatus for your workspace and life.
               </p>
+              <button 
+                onClick={() => setIsSubscribeOpen(true)}
+                className="bg-stone-100 hover:bg-cactus-green text-cactus-dark hover:text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-sm inline-flex"
+              >
+                Subscribe to Newsletter
+              </button>
             </div>
             
             <div>
@@ -110,9 +128,13 @@ function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="text-cactus-dark font-bold mb-6 uppercase tracking-wider text-sm">Legal</h4>
               <ul className="space-y-3 text-sm font-medium">
-                <li><a href="#" className="hover:text-cactus-orange transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-cactus-orange transition-colors">Terms of Service</a></li>
-                <li><Link to="/about" className="hover:text-cactus-orange transition-colors">Contact Us</Link></li>
+                <li><Link to="/privacy" className="hover:text-cactus-orange transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-cactus-orange transition-colors">Terms of Service</Link></li>
+                <li className="pt-2">
+                  <span className="text-cactus-dark block mb-1">Contact Us:</span>
+                  <a href="mailto:cactusapparatus.shop@gmail.com" className="hover:text-cactus-orange transition-colors block">cactusapparatus.shop@gmail.com</a>
+                  <a href="https://www.pinterest.com/cactusapparatusshop/" target="_blank" rel="noreferrer" className="hover:text-cactus-orange transition-colors block mt-1">Pinterest Account</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -132,6 +154,8 @@ function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <SubscribeModal isOpen={isSubscribeOpen} onClose={() => setIsSubscribeOpen(false)} />
     </div>
   );
 }
@@ -146,6 +170,8 @@ export default function App() {
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </Layout>
     </Router>

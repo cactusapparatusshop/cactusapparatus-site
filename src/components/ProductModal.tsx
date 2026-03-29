@@ -58,24 +58,26 @@ export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
 
         {/* Media Section (Left) */}
         <div className="w-full md:w-1/2 bg-stone-100 relative h-64 md:h-auto flex-shrink-0">
-          {product.videoUrl ? (
-            <video 
-              src={product.videoUrl}
-              poster={product.imageUrl}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
+          <div className="w-full h-full relative">
             <img 
               src={product.imageUrl} 
               alt={product.name} 
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-          )}
+            {product.videoUrl && (
+              <video 
+                src={product.videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-500"
+                onLoadedData={(e) => (e.currentTarget.style.opacity = '1')}
+                style={{ opacity: 0 }}
+              />
+            )}
+          </div>
           {product.badge && (
             <div className="absolute top-4 left-4 z-10 bg-cactus-orange text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
               {product.badge}

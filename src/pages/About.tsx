@@ -26,6 +26,20 @@ export default function About() {
               Welcome to the outpost.
             </p>
           </div>
+
+          <div className="mt-16 pt-10 border-t border-stone-100 text-left max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-cactus-dark mb-6">Contact Us</h2>
+            <div className="space-y-4 text-stone-600">
+              <p className="flex items-center gap-3">
+                <span className="font-bold text-cactus-dark">Email:</span>
+                <a href="mailto:cactusapparatus.shop@gmail.com" className="text-cactus-green hover:underline">cactusapparatus.shop@gmail.com</a>
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="font-bold text-cactus-dark">Pinterest:</span>
+                <a href="https://www.pinterest.com/cactusapparatusshop/" target="_blank" rel="noreferrer" className="text-cactus-green hover:underline">cactusapparatusshop</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

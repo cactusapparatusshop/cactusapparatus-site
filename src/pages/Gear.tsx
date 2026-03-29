@@ -82,6 +82,17 @@ export default function Gear() {
               </div>
             </div>
           ))}
+          
+          <div className="text-center pt-12 animate-in fade-in slide-in-from-bottom-8 fill-mode-both" style={{ animationDelay: `${PINTEREST_PRODUCTS.length * 100}ms` }}>
+            <a 
+              href="https://www.pinterest.com/cactusapparatusshop/" 
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-cactus-green hover:bg-cactus-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg shadow-cactus-green/20"
+            >
+              View More on Pinterest <ExternalLink size={20} />
+            </a>
+          </div>
         </div>
       </div>
 
