@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Reviews() {
+export default function Bundles() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-cactus-bg py-20 px-4">
       <div className="text-center max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -11,8 +11,8 @@ export default function Reviews() {
         </div>
         <h1 className="text-5xl font-extrabold text-cactus-dark mb-6">Under Construction</h1>
         <p className="text-xl text-stone-600 mb-10 leading-relaxed">
-          We are currently calibrating our instruments and field-testing new apparatus. 
-          Our comprehensive review database will be available soon.
+          We are currently curating the perfect bundles and kits for your setup. 
+          Our exclusive collections will be available soon.
         </p>
         <Link 
           to="/"

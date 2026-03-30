@@ -6,8 +6,8 @@ import { SearchModal } from './components/SearchModal';
 import { SubscribeModal } from './components/SubscribeModal';
 import Home from './pages/Home';
 import Gear from './pages/Gear';
-import Reviews from './pages/Reviews';
-import Journal from './pages/Journal';
+import Bundles from './pages/Bundles';
+import GearGauntlet from './pages/GearGauntlet';
 import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -42,8 +42,8 @@ function Layout({ children }: { children: React.ReactNode }) {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/gear" className={`font-medium transition-colors ${location.pathname === '/gear' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Curated Gear</Link>
-              <Link to="/reviews" className={`font-medium transition-colors ${location.pathname === '/reviews' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Reviews</Link>
-              <Link to="/journal" className={`font-medium transition-colors ${location.pathname === '/journal' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Journal</Link>
+              <Link to="/bundles" className={`font-medium transition-colors ${location.pathname === '/bundles' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Bundles/Kits</Link>
+              <Link to="/gauntlet" className={`font-medium transition-colors ${location.pathname === '/gauntlet' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Gear Gauntlet</Link>
               <Link to="/about" className={`font-medium transition-colors ${location.pathname === '/about' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>About</Link>
             </div>
 
@@ -79,8 +79,8 @@ function Layout({ children }: { children: React.ReactNode }) {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
             <Link to="/gear" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Curated Gear</Link>
-            <Link to="/reviews" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Reviews</Link>
-            <Link to="/journal" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Journal</Link>
+            <Link to="/bundles" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Bundles/Kits</Link>
+            <Link to="/gauntlet" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Gear Gauntlet</Link>
             <Link to="/about" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">About</Link>
           </div>
         )}
@@ -118,10 +118,10 @@ function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="text-cactus-dark font-bold mb-6 uppercase tracking-wider text-sm">Explore</h4>
               <ul className="space-y-3 text-sm font-medium">
-                <li><Link to="/reviews" className="hover:text-cactus-orange transition-colors">Latest Reviews</Link></li>
-                <li><Link to="/gear" className="hover:text-cactus-orange transition-colors">Buying Guides</Link></li>
+                <li><Link to="/bundles" className="hover:text-cactus-orange transition-colors">Bundles & Kits</Link></li>
+                <li><Link to="/gauntlet" className="hover:text-cactus-orange transition-colors">Gear Gauntlet</Link></li>
+                <li><Link to="/gear" className="hover:text-cactus-orange transition-colors">Curated Gear</Link></li>
                 <li><Link to="/gear" className="hover:text-cactus-orange transition-colors">Top 10 Desk Accessories</Link></li>
-                <li><Link to="/gear" className="hover:text-cactus-orange transition-colors">Gift Guides</Link></li>
               </ul>
             </div>
             
@@ -167,8 +167,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gear" element={<Gear />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/journal" element={<Journal />} />
+          <Route path="/bundles" element={<Bundles />} />
+          <Route path="/gauntlet" element={<GearGauntlet />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
