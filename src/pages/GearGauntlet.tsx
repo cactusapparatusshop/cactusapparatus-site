@@ -22,7 +22,7 @@ const COMPARISONS = [
         name: "Fitbit Versa 4",
         isCurated: false,
         specs: ["$199.95", "Up to 6 days", "AMOLED", "Built-in", "Active Zone Minutes, SpO2"],
-        image: "https://m.media-amazon.com/images/I/61H5G-yD6xL._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=400&q=80"
       }
     ]
   },
@@ -40,13 +40,13 @@ const COMPARISONS = [
         name: "Sony WH-CH720N",
         isCurated: false,
         specs: ["$148.00", "Dual Noise Sensor", "35 Hours (ANC On)", "Bluetooth 5.2", "Over-Ear"],
-        image: "https://m.media-amazon.com/images/I/41lA0o+0tPL._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=400&q=80"
       },
       {
         name: "JBL Tune 760NC",
         isCurated: false,
         specs: ["$129.95", "Active Noise Cancelling", "35 Hours (ANC On)", "Bluetooth 5.0", "Over-Ear"],
-        image: "https://m.media-amazon.com/images/I/61QGzHMAf4L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80"
       }
     ]
   },
@@ -64,13 +64,13 @@ const COMPARISONS = [
         name: "Bose Ultra Open Earbuds",
         isCurated: false,
         specs: ["$299.00", "OpenAudio", "48 Hours (with case)", "IPX4", "Immersive Audio"],
-        image: "https://m.media-amazon.com/images/I/51uIu2+30jL._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=80"
       },
       {
         name: "Oladance OWS Pro",
         isCurated: false,
         specs: ["$229.99", "Open-Ear", "58 Hours (with case)", "IPX4", "Multipoint Connection"],
-        image: "https://m.media-amazon.com/images/I/61iV8X-uV1L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80"
       }
     ]
   },
@@ -88,13 +88,13 @@ const COMPARISONS = [
         name: "NZXT H510 Flow",
         isCurated: false,
         specs: ["$89.99", "Mid Tower", "2x 120mm", "Perforated Mesh", "360mm"],
-        image: "https://m.media-amazon.com/images/I/71O1X-B+D7L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=400&q=80"
       },
       {
         name: "Corsair 4000D Airflow",
         isCurated: false,
         specs: ["$104.99", "Mid Tower", "2x 120mm", "Steel Mesh", "360mm"],
-        image: "https://m.media-amazon.com/images/I/81hLUh-zP-L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=400&q=80"
       }
     ]
   },
@@ -112,13 +112,13 @@ const COMPARISONS = [
         name: "Amazfit Bip 3 Pro",
         isCurated: false,
         specs: ["$69.99", "Up to 14 days", "1.69\" TFT", "Built-in 4 Satellite", "Heart Rate, SpO2, Sleep"],
-        image: "https://m.media-amazon.com/images/I/61llOWJjA0L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=400&q=80"
       },
       {
         name: "TOZO S2",
         isCurated: false,
         specs: ["$39.99", "Up to 10 days", "1.69\" LCD", "Connected via Phone", "Heart Rate, Sleep, Activity"],
-        image: "https://m.media-amazon.com/images/I/61w+D2+L61L._AC_SL1500_.jpg"
+        image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80"
       }
     ]
   }
