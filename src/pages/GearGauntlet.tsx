@@ -3,26 +3,74 @@ import { Check, X, ShieldAlert, Trophy } from 'lucide-react';
 
 const COMPARISONS = [
   {
-    category: "Smartwatches",
+    category: "Premium Smartwatches",
     features: ["Price", "Battery Life", "Display", "GPS", "Health Tracking"],
     products: [
       {
         name: "Garmin vívoactive 5",
         isCurated: true,
         specs: ["$299.99", "Up to 11 days", "1.2\" AMOLED", "Built-in", "Advanced Body Battery, Sleep Coach"],
-        image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=400"
+        image: "https://i.ebayimg.com/images/g/UQsAAeSwMCZn0df7/s-l1600.jpg"
       },
       {
         name: "Apple Watch SE (Gen 2)",
         isCurated: false,
         specs: ["$249.00", "Up to 18 hours", "Retina OLED", "Built-in", "Heart Rate, Crash Detection"],
-        image: "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&q=80&w=400"
+        image: "https://m.media-amazon.com/images/I/71LfnkRgZ4L._AC_SL1500_.jpg"
       },
       {
         name: "Fitbit Versa 4",
         isCurated: false,
         specs: ["$199.95", "Up to 6 days", "AMOLED", "Built-in", "Active Zone Minutes, SpO2"],
-        image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&q=80&w=400"
+        image: "https://m.media-amazon.com/images/I/61H5G-yD6xL._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
+    category: "Over-Ear ANC Headphones",
+    features: ["Price", "ANC Type", "Battery Life", "Connectivity", "Design"],
+    products: [
+      {
+        name: "Soundcore by Anker Q20i",
+        isCurated: true,
+        specs: ["$49.99", "Hybrid ANC", "40 Hours (ANC On)", "Bluetooth 5.0", "Over-Ear"],
+        image: "https://i.ebayimg.com/images/g/ZwUAAOSwlU5mRW6f/s-l1600.jpg"
+      },
+      {
+        name: "Sony WH-CH720N",
+        isCurated: false,
+        specs: ["$148.00", "Dual Noise Sensor", "35 Hours (ANC On)", "Bluetooth 5.2", "Over-Ear"],
+        image: "https://m.media-amazon.com/images/I/41lA0o+0tPL._AC_SL1500_.jpg"
+      },
+      {
+        name: "JBL Tune 760NC",
+        isCurated: false,
+        specs: ["$129.95", "Active Noise Cancelling", "35 Hours (ANC On)", "Bluetooth 5.0", "Over-Ear"],
+        image: "https://m.media-amazon.com/images/I/61QGzHMAf4L._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
+    category: "Open-Ear Headphones",
+    features: ["Price", "Design", "Battery Life", "Water Resistance", "Audio Tech"],
+    products: [
+      {
+        name: "SHOKZ OpenFit 2+",
+        isCurated: true,
+        specs: ["$179.95", "Open-Ear", "48 Hours (with case)", "IP55", "Dolby Audio"],
+        image: "https://i.ebayimg.com/images/g/pXgAAeSwuAxpvOqW/s-l1600.jpg"
+      },
+      {
+        name: "Bose Ultra Open Earbuds",
+        isCurated: false,
+        specs: ["$299.00", "OpenAudio", "48 Hours (with case)", "IPX4", "Immersive Audio"],
+        image: "https://m.media-amazon.com/images/I/51uIu2+30jL._AC_SL1500_.jpg"
+      },
+      {
+        name: "Oladance OWS Pro",
+        isCurated: false,
+        specs: ["$229.99", "Open-Ear", "58 Hours (with case)", "IPX4", "Multipoint Connection"],
+        image: "https://m.media-amazon.com/images/I/61iV8X-uV1L._AC_SL1500_.jpg"
       }
     ]
   },
@@ -33,92 +81,44 @@ const COMPARISONS = [
       {
         name: "VETROO AL800",
         isCurated: true,
-        specs: ["$119.99", "Mid Tower", "None (Showcase)", "Tempered Glass", "400mm"],
-        image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&q=80&w=400"
+        specs: ["$119.99", "Full Tower", "4x 120mm ARGB", "Tempered Glass Door", "400mm"],
+        image: "https://i.ebayimg.com/images/g/k7AAAOSwHEtmvxpd/s-l1600.jpg"
       },
       {
         name: "NZXT H510 Flow",
         isCurated: false,
         specs: ["$89.99", "Mid Tower", "2x 120mm", "Perforated Mesh", "360mm"],
-        image: "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&q=80&w=400"
+        image: "https://m.media-amazon.com/images/I/71O1X-B+D7L._AC_SL1500_.jpg"
       },
       {
         name: "Corsair 4000D Airflow",
         isCurated: false,
         specs: ["$104.99", "Mid Tower", "2x 120mm", "Steel Mesh", "360mm"],
-        image: "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&fit=crop&q=80&w=400"
+        image: "https://m.media-amazon.com/images/I/81hLUh-zP-L._AC_SL1500_.jpg"
       }
     ]
   },
   {
-    category: "Mechanical Keyboards",
-    features: ["Price", "Layout", "Connectivity", "Switches", "Hot-Swappable"],
+    category: "Budget Smartwatches",
+    features: ["Price", "Battery Life", "Display", "GPS", "Health Tracking"],
     products: [
       {
-        name: "Keychron K2",
+        name: "Fitpolo Smart Watch",
         isCurated: true,
-        specs: ["$79.00", "75% (84 Keys)", "Bluetooth 5.1 / Wired", "Gateron G Pro", "Yes (Optional)"],
-        image: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&q=80&w=400"
+        specs: ["$39.99", "Up to 7 days", "1.3\" AMOLED", "Connected via Phone", "Heart Rate, SpO2, Sleep"],
+        image: "https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg"
       },
       {
-        name: "NuPhy Air75",
+        name: "Amazfit Bip 3 Pro",
         isCurated: false,
-        specs: ["$109.95", "75% Low-Profile", "2.4G / BT 5.0 / Wired", "Gateron Low-Profile", "Yes"],
-        image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&q=80&w=400"
+        specs: ["$69.99", "Up to 14 days", "1.69\" TFT", "Built-in 4 Satellite", "Heart Rate, SpO2, Sleep"],
+        image: "https://m.media-amazon.com/images/I/61llOWJjA0L._AC_SL1500_.jpg"
       },
       {
-        name: "Logitech MX Mechanical Mini",
+        name: "TOZO S2",
         isCurated: false,
-        specs: ["$149.99", "75% Low-Profile", "Logi Bolt / BT", "Tactile Quiet", "No"],
-        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&q=80&w=400"
-      }
-    ]
-  },
-  {
-    category: "Productivity Mice",
-    features: ["Price", "Sensor", "Scroll Wheel", "Buttons", "Multi-Device"],
-    products: [
-      {
-        name: "Logitech MX Master 3S",
-        isCurated: true,
-        specs: ["$99.99", "8000 DPI Darkfield", "MagSpeed Electromagnetic", "7 Custom Buttons", "Up to 3 Devices"],
-        image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&q=80&w=400"
-      },
-      {
-        name: "Razer Pro Click",
-        isCurated: false,
-        specs: ["$99.99", "16000 DPI Optical", "Standard Scroll", "8 Programmable", "Up to 4 Devices"],
-        image: "https://images.unsplash.com/photo-1615663245857-ac1eeb536fcb?auto=format&fit=crop&q=80&w=400"
-      },
-      {
-        name: "Apple Magic Mouse",
-        isCurated: false,
-        specs: ["$79.00", "Standard Optical", "Multi-Touch Surface", "Touch Surface", "1 Device (Mac)"],
-        image: "https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?auto=format&fit=crop&q=80&w=400"
-      }
-    ]
-  },
-  {
-    category: "Noise-Cancelling Headphones",
-    features: ["Price", "ANC Quality", "Battery Life", "Weight", "Multipoint"],
-    products: [
-      {
-        name: "Sony WH-1000XM5",
-        isCurated: true,
-        specs: ["$398.00", "Industry Leading", "30 Hours", "250g", "Yes"],
-        image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=400"
-      },
-      {
-        name: "Bose QuietComfort Ultra",
-        isCurated: false,
-        specs: ["$429.00", "World-Class", "24 Hours", "252g", "Yes"],
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400"
-      },
-      {
-        name: "Sennheiser Momentum 4",
-        isCurated: false,
-        specs: ["$379.95", "Excellent", "60 Hours", "293g", "Yes"],
-        image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=400"
+        specs: ["$39.99", "Up to 10 days", "1.69\" LCD", "Connected via Phone", "Heart Rate, Sleep, Activity"],
+        image: "https://m.media-amazon.com/images/I/61w+D2+L61L._AC_SL1500_.jpg"
       }
     ]
   }
