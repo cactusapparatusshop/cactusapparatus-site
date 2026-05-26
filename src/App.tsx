@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X, Leaf } from 'lucide-react';
+import { Search, Menu, X, Leaf, ChevronDown } from 'lucide-react';
 import { CactusLogo } from './components/CactusLogo';
 import { SearchModal } from './components/SearchModal';
 import { SubscribeModal } from './components/SubscribeModal';
@@ -8,7 +8,8 @@ import Home from './pages/Home';
 import Gear from './pages/Gear';
 import Bundles from './pages/Bundles';
 import GearGauntlet from './pages/GearGauntlet';
-import About from './pages/About';
+import Mission from './pages/Mission';
+import MeetCeo from './pages/MeetCeo';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
@@ -44,7 +45,41 @@ function Layout({ children }: { children: React.ReactNode }) {
               <Link to="/gear" className={`font-medium transition-colors ${location.pathname === '/gear' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Curated Gear</Link>
               <Link to="/bundles" className={`font-medium transition-colors ${location.pathname === '/bundles' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Bundles/Kits</Link>
               <Link to="/gauntlet" className={`font-medium transition-colors ${location.pathname === '/gauntlet' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>Gear Gauntlet</Link>
-              <Link to="/about" className={`font-medium transition-colors ${location.pathname === '/about' ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'}`}>About</Link>
+              
+              {/* About Dropdown */}
+              <div className="relative group py-2">
+                <button 
+                  className={`font-medium transition-colors flex items-center gap-1 cursor-pointer ${
+                    location.pathname.startsWith('/about') ? 'text-cactus-green' : 'text-cactus-dark hover:text-cactus-green'
+                  }`}
+                >
+                  About
+                  <ChevronDown size={16} className="transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+                {/* Dropdown Menu */}
+                <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-stone-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2.5">
+                  <Link 
+                    to="/about/mission" 
+                    className={`block px-5 py-2 text-sm transition-colors font-medium border-l-2 ${
+                      location.pathname === '/about/mission' || location.pathname === '/about'
+                        ? 'text-cactus-green border-cactus-green bg-stone-50' 
+                        : 'text-stone-600 border-transparent hover:bg-stone-50 hover:text-cactus-green'
+                    }`}
+                  >
+                    Mission Statement
+                  </Link>
+                  <Link 
+                    to="/about/ceo" 
+                    className={`block px-5 py-2 text-sm transition-colors font-medium border-l-2 mt-1 ${
+                      location.pathname === '/about/ceo'
+                        ? 'text-cactus-green border-cactus-green bg-stone-50' 
+                        : 'text-stone-600 border-transparent hover:bg-stone-50 hover:text-cactus-green'
+                    }`}
+                  >
+                    Meet Our CEO
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Icons */}
@@ -77,11 +112,20 @@ function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
-            <Link to="/gear" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Curated Gear</Link>
-            <Link to="/bundles" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Bundles/Kits</Link>
-            <Link to="/gauntlet" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Gear Gauntlet</Link>
-            <Link to="/about" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">About</Link>
+          <div className="md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-5 space-y-3 animate-in slide-in-from-top-2 duration-200">
+            <div className="space-y-1">
+              <Link to="/gear" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Curated Gear</Link>
+              <Link to="/bundles" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Bundles/Kits</Link>
+              <Link to="/gauntlet" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-cactus-dark hover:bg-stone-50">Gear Gauntlet</Link>
+            </div>
+            
+            <div className="pt-2 border-t border-stone-100">
+              <span className="block px-3 py-1 text-xs font-bold text-stone-400 uppercase tracking-widest mb-1.5">About</span>
+              <div className="space-y-1 pl-2">
+                <Link to="/about/mission" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-stone-600 hover:bg-stone-50 hover:text-cactus-green">Mission Statement</Link>
+                <Link to="/about/ceo" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-stone-600 hover:bg-stone-50 hover:text-cactus-green">Meet Our CEO</Link>
+              </div>
+            </div>
           </div>
         )}
       </nav>
@@ -169,7 +213,9 @@ export default function App() {
           <Route path="/gear" element={<Gear />} />
           <Route path="/bundles" element={<Bundles />} />
           <Route path="/gauntlet" element={<GearGauntlet />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Mission />} />
+          <Route path="/about/mission" element={<Mission />} />
+          <Route path="/about/ceo" element={<MeetCeo />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
         </Routes>

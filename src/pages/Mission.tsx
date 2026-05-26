@@ -1,7 +1,7 @@
 import React from 'react';
 import { CactusLogo } from '../components/CactusLogo';
 
-export default function About() {
+export default function Mission() {
   return (
     <div className="bg-cactus-bg min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
